@@ -7,14 +7,8 @@ void setup()
   pinMode(5, OUTPUT);//ขา IN1 ของ Drive motor 1
   pinMode(6, OUTPUT);//ขา IN2 ของ Drive motor 1
 
-  pinMode(9, OUTPUT);//ขา D1 ของ Drive motor 1 และ Drive motor 2
-  pinMode(10, OUTPUT);//ขา D2 ของ Drive motor 1 และ Drive motor 2
-
-  pinMode(3, OUTPUT);//ขา IN1 ของ Drive motor 2
+  pinMode(10, OUTPUT);//ขา IN1 ของ Drive motor 2
   pinMode(11, OUTPUT);//ขา IN2 ของ Drive motor 2
-
-  digitalWrite(9, 0);//ขา D1 จ่าย 0 เพื่อให้มอเตอร์ทำงาน
-  digitalWrite(10, 1);//ขา D2 จ่าย 1 เพื่อให้มอเตอร์ทำงาน
 
   do
   {
@@ -98,23 +92,23 @@ long microsecondsToCentimeters(long microseconds)
 void forward(int speeds) //ฟังชั่นเดินหน้า
 {
   analogWrite(5, speeds); digitalWrite(6, 0);
-  analogWrite(3, speeds); digitalWrite(11, 0);
+  analogWrite(10, speeds); digitalWrite(11, 0);
 }
 
 void backward(int speeds) //ฟังชั่นถอยหลัง
 {
   analogWrite(6, speeds); digitalWrite(5, 0);
-  analogWrite(11, speeds); digitalWrite(3, 0);
+  analogWrite(11, speeds); digitalWrite(10, 0);
 }
 
 void right(int speeds) //ฟังชั่นเลี้ยวขวา
 {
   analogWrite(6, speeds); digitalWrite(5, 0);
-  analogWrite(3, speeds); digitalWrite(11, 0);
+  analogWrite(10, speeds); digitalWrite(11, 0);
 }
 
 void left(int speeds) //ฟังชั่นเลี้ยวซ้าย
 {
   analogWrite(5, speeds); digitalWrite(6, 0);
-  analogWrite(11, speeds); digitalWrite(3, 0);
+  analogWrite(11, speeds); digitalWrite(10, 0);
 }
